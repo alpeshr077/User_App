@@ -13,7 +13,6 @@ import com.google.firebase.database.ValueEventListener
 class MainActivity : AppCompatActivity() {
 
     lateinit var reference : DatabaseReference
-    lateinit var adapter: NewsAdapter
     lateinit var newsArryList : ArrayList<UserModel>
     lateinit var newsRecycler : RecyclerView
 
@@ -26,11 +25,46 @@ class MainActivity : AppCompatActivity() {
         newsRecycler.layoutManager = LinearLayoutManager(this)
         newsRecycler.setHasFixedSize(true)
 
-        newsArryList = arrayListOf<UserModel>()
+        newsArryList = arrayListOf()
 
         getNewsData()
+//        getImages()
 
     }
+
+//    private fun getImages() {
+//
+//        reference = FirebaseDatabase.getInstance().getReference("User")
+//
+//        reference.addValueEventListener(object : ValueEventListener{
+//            override fun onDataChange(snapshot: DataSnapshot) {
+//
+//                if (snapshot.exists()){
+//
+//                    for (newssnapshot in snapshot.children){
+//
+//                        var news = newssnapshot.getValue(UserModel::class.java)
+//
+//                        newsArryList.add(news!!)
+//
+//                    }
+//
+//                    newsRecycler.adapter = NewsAdapter(newsArryList)
+//
+//                }
+//
+//
+//            }
+//
+//            override fun onCancelled(error: DatabaseError) {
+//
+//            }
+//
+//
+//        })
+//
+//
+//    }
 
     private fun getNewsData() {
 
@@ -49,7 +83,6 @@ class MainActivity : AppCompatActivity() {
 
                     }
 
-
                     newsRecycler.adapter = NewsAdapter(newsArryList)
 
                 }
@@ -59,9 +92,7 @@ class MainActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {
 
 
-
             }
-
 
         })
 
