@@ -28,7 +28,7 @@
             app:cardCornerRadius="20dp"
             app:cardUseCompatPadding="true"
             app:cardElevation="5dp"
-            app:cardBackgroundColor="#FFB300">
+            app:cardBackgroundColor="#0E21A0">
 
             <TextView
                 android:id="@+id/newsIndia"
@@ -48,7 +48,7 @@
             app:cardCornerRadius="20dp"
             app:cardUseCompatPadding="true"
             app:cardElevation="5dp"
-            app:cardBackgroundColor="#1E88E5">
+            app:cardBackgroundColor="#4D2DB7">
 
             <TextView
                 android:id="@+id/NewsBusiness"
